@@ -1,10 +1,14 @@
 package david.barbaran.savetheamazon
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
+import androidx.core.app.ActivityCompat
+import androidx.core.app.ActivityOptionsCompat
 import androidx.core.content.ContextCompat
+import david.barbaran.savetheamazon.util.RevealAnimation
 import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : AppCompatActivity() {
@@ -21,5 +25,27 @@ class SplashActivity : AppCompatActivity() {
             animationView.setMinFrame(40)
         }, 3000)
 
+        helpButton.setOnClickListener {
+            animationView.pauseAnimation()
+            wavesView.pauseAnimation()
+
+            val v : View = helpButton as View
+            val options = ActivityOptionsCompat.makeSceneTransitionAnimation(this, v, "transition")
+
+            val revealX: Int = (v.x + (v.width / 2)).toInt()
+            val revealY: Int = (v.y + (v.height / 2)).toInt()
+
+            val intent = Intent(this, HomeActivity::class.java)
+            intent.putExtra(RevealAnimation.EXTRA_CIRCULAR_REVEAL_X, revealX)
+            intent.putExtra(RevealAnimation.EXTRA_CIRCULAR_REVEAL_Y, revealY)
+            ActivityCompat.startActivity(this, intent, options.toBundle())
+            overridePendingTransition(0, 0)
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        animationView.playAnimation()
+        wavesView.playAnimation()
     }
 }
