@@ -7,7 +7,7 @@
     android:background="@drawable/bg_splash"
     android:fitsSystemWindows="true"
     android:clipToPadding="false"
-    tools:context=".SplashActivity">
+    tools:context=".feature.splash.SplashActivity">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideLineStart"

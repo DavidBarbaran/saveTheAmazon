@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -18,6 +20,10 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "BASE_URL", "\"https://reforestation-develop.firebaseio.com/\""
+        }
+        debug {
+            buildConfigField "String", "BASE_URL", "\"https://reforestation-develop.firebaseio.com/\""
         }
     }
 }
@@ -35,4 +41,15 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:$espressoCoreVersion"
     implementation "com.google.android.material:material:$materialVersion"
     implementation "com.airbnb.android:lottie:$lottieVersion"
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion"
+    kapt "android.arch.lifecycle:compiler:$lifecycleVersion"
+    implementation "android.arch.persistence.room:runtime:$persistenceVersion"
+    kapt "android.arch.persistence.room:compiler:$persistenceVersion"
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    kapt "com.github.bumptech.glide:compiler:$glideVersion"
+    implementation "org.koin:koin-androidx-scope:$koinVersion"
+    implementation "org.koin:koin-androidx-viewmodel:$koinVersion"
 }

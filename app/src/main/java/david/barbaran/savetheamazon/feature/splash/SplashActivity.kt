@@ -1,4 +1,4 @@
-package david.barbaran.savetheamazon
+package david.barbaran.savetheamazon.feature.splash
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +8,8 @@ import android.view.View
 import androidx.core.app.ActivityCompat
 import androidx.core.app.ActivityOptionsCompat
 import androidx.core.content.ContextCompat
+import david.barbaran.savetheamazon.R
+import david.barbaran.savetheamazon.feature.home.HomeActivity
 import david.barbaran.savetheamazon.util.RevealAnimation
 import kotlinx.android.synthetic.main.activity_splash.*
 
