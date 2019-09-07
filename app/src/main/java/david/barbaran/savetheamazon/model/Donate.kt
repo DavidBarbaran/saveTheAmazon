@@ -1,15 +1,24 @@
 package david.barbaran.savetheamazon.model
 
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
-class Donate {
+@Entity
+data class Donate (
+    @PrimaryKey(autoGenerate = true)
+    val id : Int,
 
     @SerializedName("amount")
-    var amount : String? = ""
+    @ColumnInfo(name = "amount")
+    var amount : String? = "",
 
     @SerializedName("description")
-    var description : String? = ""
+    @ColumnInfo(name = "description")
+    var description : String? = "",
 
     @SerializedName("image")
+    @ColumnInfo(name = "image")
     var image : String? = ""
-}
+)

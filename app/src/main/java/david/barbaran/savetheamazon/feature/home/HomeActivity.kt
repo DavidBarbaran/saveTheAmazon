@@ -34,7 +34,6 @@ class HomeActivity : AppCompatActivity() {
         homeViewModel = ViewModelProviders.of(this)[HomeViewModel::class.java]
         homeViewModel?.apply {
             donateLiveData.observe(this@HomeActivity, getDonateObserver())
-            getDonate()
         }
     }
 
@@ -53,17 +52,21 @@ class HomeActivity : AppCompatActivity() {
         mRevealAnimation = RevealAnimation(homeContent, intent, this)
         mRevealAnimation?.onFinishReveal = object : RevealAnimation.OnFinishReveal {
             override fun onFinishReveal() {
-                window.setBackgroundDrawableResource(android.R.color.white)
-
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-                    window.statusBarColor =
-                        ContextCompat.getColor(this@HomeActivity, android.R.color.white)
-                } else {
-                    window.statusBarColor =
-                        ContextCompat.getColor(this@HomeActivity, android.R.color.black)
-                }
+                setStatusBar()
+                homeViewModel?.getDonate()
             }
+        }
+    }
+
+    private fun setStatusBar(){
+        window.setBackgroundDrawableResource(android.R.color.white)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+            window.statusBarColor =
+                ContextCompat.getColor(this@HomeActivity, android.R.color.white)
+        } else {
+            window.statusBarColor =
+                ContextCompat.getColor(this@HomeActivity, android.R.color.black)
         }
     }
 
