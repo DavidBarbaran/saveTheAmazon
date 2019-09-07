@@ -1,4 +1,4 @@
-package david.barbaran.savetheamazon.feature.home
+package david.barbaran.savetheamazon.feature.home.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
