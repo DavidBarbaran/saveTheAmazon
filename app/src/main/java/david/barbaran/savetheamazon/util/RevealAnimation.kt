@@ -48,7 +48,7 @@ class RevealAnimation(
         val finalRadius = (max(mView.width, mView.height) * 1.1).toFloat()
 
         val circularReveal = ViewAnimationUtils.createCircularReveal(mView, x, y, 0f, finalRadius)
-        circularReveal.duration = 400
+        circularReveal.duration = 600
         circularReveal.interpolator = AccelerateInterpolator()
 
         mView.visibility = View.VISIBLE

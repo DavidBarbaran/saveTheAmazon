@@ -73,7 +73,9 @@ class HomeActivity : AppCompatActivity() {
     /** Observers **/
 
     private fun getDonateObserver() = Observer<MutableList<Donate>> {
+        shimmerLayout.hideShimmer()
+        shimmerLayout.visibility = View.GONE
         donateAdapter.list = it
-        donateAdapter.notifyDataSetChanged()
+        donateAdapter.notifyItemRangeInserted(0, it.size)
     }
 }

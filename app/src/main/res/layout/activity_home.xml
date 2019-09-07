@@ -9,6 +9,44 @@
     android:fitsSystemWindows="true"
     tools:context=".feature.home.HomeActivity">
 
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shimmer_auto_start="true">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include layout="@layout/item_shimmer" />
+
+                <include layout="@layout/item_shimmer" />
+
+                <include layout="@layout/item_shimmer" />
+
+                <include layout="@layout/item_shimmer" />
+
+                <include layout="@layout/item_shimmer" />
+
+                <include layout="@layout/item_shimmer" />
+
+                <include layout="@layout/item_shimmer" />
+
+                <include layout="@layout/item_shimmer" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/donateRecycler"
         android:layout_width="match_parent"

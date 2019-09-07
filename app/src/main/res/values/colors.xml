@@ -13,4 +13,6 @@
     <color name="sky100">#59c1e4</color>
 
     <color name="black">#2A2A2A</color>
+
+    <color name="grayShimmer">#888888</color>
 </resources>
