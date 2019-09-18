@@ -17,7 +17,7 @@
 - [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel)
 
 
-<img src="https://i.imgur.com/JPQCOZF.gif" width="362">
+<img src="/art/save_the_amazon.gif?raw=true" width="362">
 
 ### Reporting issues or improvements  🛠
 
