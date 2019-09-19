@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimaryDark">@color/space</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="green">#76BA41</color>
+    <color name="space">#021B30</color>
+
+    <color name="blue">#2979FF</color>
+    <color name="sky">#40C4FF</color>
+
+    <color name="sky100">#59c1e4</color>
+
+    <color name="black">#2A2A2A</color>
+
+    <color name="grayShimmer">#888888</color>
 </resources>
