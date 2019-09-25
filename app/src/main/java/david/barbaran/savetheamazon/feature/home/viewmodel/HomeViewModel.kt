@@ -2,13 +2,13 @@ package david.barbaran.savetheamazon.feature.home.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import david.barbaran.savetheamazon.data.repository.DonateRepositoryImpl
+import david.barbaran.savetheamazon.data.repository.DonateRepository
 import david.barbaran.savetheamazon.model.Donate
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-class HomeViewModel(private val donateRepository: DonateRepositoryImpl) : ViewModel() {
+class HomeViewModel(private val donateRepository: DonateRepository) : ViewModel() {
 
     var donateLiveData = MutableLiveData<MutableList<Donate>>()
 

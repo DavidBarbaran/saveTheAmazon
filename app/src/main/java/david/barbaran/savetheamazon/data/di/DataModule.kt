@@ -5,6 +5,7 @@ import david.barbaran.savetheamazon.BuildConfig
 import david.barbaran.savetheamazon.data.database.AppDatabase
 import david.barbaran.savetheamazon.data.net.RestApi
 import david.barbaran.savetheamazon.data.net.Service
+import david.barbaran.savetheamazon.data.repository.DonateRepository
 import david.barbaran.savetheamazon.data.repository.DonateRepositoryImpl
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
@@ -41,5 +42,5 @@ val dataModule = module {
      * @see david.barbaran.savetheamazon.data.repository.DonateRepositoryImpl
      **/
 
-    single { DonateRepositoryImpl(androidContext(), get(), get()) }
+    single<DonateRepository> { DonateRepositoryImpl(androidContext(), get(), get()) }
 }
