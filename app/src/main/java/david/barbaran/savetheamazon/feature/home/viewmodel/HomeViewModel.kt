@@ -1,26 +1,19 @@
 package david.barbaran.savetheamazon.feature.home.viewmodel
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import david.barbaran.savetheamazon.data.repository.DonateRepositoryImpl
+import androidx.lifecycle.ViewModel
+import david.barbaran.savetheamazon.data.repository.DonateRepository
 import david.barbaran.savetheamazon.model.Donate
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 
-class HomeViewModel(application: Application) : AndroidViewModel(application) {
-
-    private val context = getApplication<Application>().applicationContext
-
-    private val donateRepository = DonateRepositoryImpl(context)
+class HomeViewModel(private val donateRepository: DonateRepository) : ViewModel() {
 
     var donateLiveData = MutableLiveData<MutableList<Donate>>()
 
     fun getDonate() {
-        GlobalScope.launch(Dispatchers.IO) {
+        CoroutineScope(Dispatchers.IO).launch {
             val donates = donateRepository.getDonates()
-            GlobalScope.launch(Dispatchers.Main) {
+            launch(Dispatchers.Main) {
                 donateLiveData.postValue(donates)
             }
         }

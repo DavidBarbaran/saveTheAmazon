@@ -17,11 +17,9 @@
         android:name=".app.MainApplication"
         android:theme="@style/AppTheme">
         <activity android:name=".feature.home.HomeActivity"
-            android:configChanges="orientation"
             android:theme="@style/AppTheme.Transparent"/>
         <activity
-            android:name=".feature.splash.SplashActivity"
-           >
+            android:name=".feature.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -8,14 +8,13 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import david.barbaran.savetheamazon.R
-import david.barbaran.savetheamazon.feature.home.presenter.HomeView
 import david.barbaran.savetheamazon.feature.home.viewmodel.HomeViewModel
 import david.barbaran.savetheamazon.model.Donate
 import david.barbaran.savetheamazon.util.RevealAnimation
 import kotlinx.android.synthetic.main.activity_home.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class HomeActivity : AppCompatActivity(), HomeView {
+class HomeActivity : AppCompatActivity() {
 
     private var mRevealAnimation: RevealAnimation? = null
     private val homeViewModel: HomeViewModel by viewModel()
@@ -69,13 +68,6 @@ class HomeActivity : AppCompatActivity(), HomeView {
             window.statusBarColor =
                 ContextCompat.getColor(this@HomeActivity, android.R.color.black)
         }
-    }
-
-    override fun shoDonates(list: MutableList<Donate>) {
-        shimmerLayout.hideShimmer()
-        shimmerLayout.visibility = View.GONE
-        donateAdapter.list = list
-        donateAdapter.notifyItemRangeInserted(0, list.size)
     }
 
     /** Observers **/

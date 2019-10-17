@@ -2,6 +2,8 @@
 
 **Architecture pattern usage:** [MVVM](https://developer.android.com/jetpack/docs/guide)
 
+![](https://developer.android.com/topic/libraries/architecture/images/final-architecture.png)
+
 #### Dependencies usage in project:
  - **100% in Kotlin** :rocket:
  - [Koin](https://github.com/InsertKoinIO/koin) for dependency injection.
